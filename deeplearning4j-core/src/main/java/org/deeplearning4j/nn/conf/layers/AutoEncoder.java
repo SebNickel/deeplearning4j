@@ -18,34 +18,17 @@
 
 package org.deeplearning4j.nn.conf.layers;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  *  Autoencoder.
  * Add Gaussian noise to input and learn
  * a reconstruction function.
  *
  */
-public class AutoEncoder extends BasePretrainNetwork {
+public @Data @NoArgsConstructor class AutoEncoder extends BasePretrainNetwork {
 
     private static final long serialVersionUID = -7624965662728637504L;
 
-    @Override
-    public int hashCode() {
-        return 0;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        return true;
-    }
-
-    public String toString() {
-        return "AutoEncoder{" +
-                '}';
-    }
 }

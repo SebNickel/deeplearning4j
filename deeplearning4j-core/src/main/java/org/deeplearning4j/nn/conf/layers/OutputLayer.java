@@ -18,33 +18,15 @@
 
 package org.deeplearning4j.nn.conf.layers;
 
+import lombok.NoArgsConstructor;
+
 /**
  * Output layer with different objective co-occurrences for different objectives.
  * This includes classification as well as prediction
  *
  */
-public class OutputLayer extends Layer {
+public @NoArgsConstructor class OutputLayer extends Layer {
 
     private static final long serialVersionUID = 8554480736972510788L;
 
-    @Override
-    public int hashCode() {
-        return 0;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        return true;
-    }
-
-    public String toString() {
-        return "OutputLayer{" +
-                '}';
-    }
 }

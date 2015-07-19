@@ -18,6 +18,9 @@
 
 package org.deeplearning4j.nn.conf.layers;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  * Restricted Boltzmann Machine.
  *
@@ -43,9 +46,12 @@ package org.deeplearning4j.nn.conf.layers;
  * http://www.iro.umontreal.ca/~lisa/publications2/index.php/publications/show/239
  *
  */
-public class RBM extends BasePretrainNetwork {
+public @Data @NoArgsConstructor class RBM extends BasePretrainNetwork {
     
     private static final long serialVersionUID = 485040309806445606L;
+
+    private HiddenUnit hidden;
+    private VisibleUnit visible;
 
     public enum VisibleUnit {
         BINARY,GAUSSIAN,SOFTMAX,LINEAR
@@ -53,27 +59,5 @@ public class RBM extends BasePretrainNetwork {
 
     public enum HiddenUnit {
         RECTIFIED,BINARY,GAUSSIAN,SOFTMAX
-    }
-
-
-    @Override
-    public int hashCode() {
-        return 0;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        return true;
-    }
-
-    public String toString() {
-        return "RBM{" +
-                '}';
     }
 }
